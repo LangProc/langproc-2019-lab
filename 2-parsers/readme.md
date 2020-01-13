@@ -8,6 +8,8 @@ You will parse and build the AST for standard maths notation over double-precisi
 
 - _Binary operators_ to be supported are `+`, `-`, `*`, `/`, and `^` (exponentiation).
 
+- The _unary operator_ to be supported is `-` (negation).
+
 - Operators follow [standard mathematical precedence](https://en.wikipedia.org/wiki/Order_of_operations).
 
 - Operators follow [standard mathematical associativity](https://en.wikipedia.org/wiki/Operator_associativity).
@@ -20,7 +22,7 @@ You will parse and build the AST for standard maths notation over double-precisi
 
 - _Variables_ are sequences of lower-case alphabetic characters.
 
-- Apart from _binary operators_, _numbers_, _variables_, and _functions_, the only other characters will be white-space (spaces, tabs, linebreaks).
+- Apart from _binary operators_, _unary operators_, _numbers_, _variables_, and _functions_, the only other characters will be white-space (spaces, tabs, linebreaks).
 
 The AST is defined as a class hierarchy, spread across the following header files.
 
