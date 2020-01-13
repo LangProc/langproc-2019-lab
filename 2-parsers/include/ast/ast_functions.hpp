@@ -15,6 +15,11 @@ protected:
         : arg(_arg)
     {}
 public:
+    virtual ~Function()
+    {
+        delete arg;
+    }
+
     virtual const char * getFunction() const =0;
 
     ExpressionPtr getArg() const

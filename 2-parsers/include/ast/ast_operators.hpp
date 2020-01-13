@@ -16,6 +16,12 @@ protected:
         , right(_right)
     {}
 public:
+    virtual ~Operator()
+    {
+        delete left;
+        delete right;
+    }
+
     virtual const char *getOpcode() const =0;
 
     ExpressionPtr getLeft() const
