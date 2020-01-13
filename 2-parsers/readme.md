@@ -30,6 +30,8 @@ The AST is defined as a class hierarchy, spread across the following header file
 
 - [`Operator`](include/ast/ast_operators.hpp): Sub-classes for representing binary operators.
 
+- [`Unary`](include/ast/ast_unary.hpp): Sub-classes for representing unary operators.
+
 - [`Function`](include/ast/ast_functions.hpp) : Sub-classes for representing unary functions.
 
 Some properties of the AST are:
@@ -119,7 +121,9 @@ const Expression *expr  = new AddOperator(
     new MulOperator(
         new MulOperator(
             new Number(5),
-            new Number(-5)
+            new NegOperator(
+                new Number(5)
+            )
         ),
         new Variable("y")
     )
@@ -131,7 +135,7 @@ $ bin/print_canonical
 7*x +5*
  -5 * y
  
-( ( 7 * x ) + ( ( 5 * -5 ) * y ) )
+( ( 7 * x ) + ( ( 5 * ( - 5 ) ) * y ) )
 ````
 
 Testing
