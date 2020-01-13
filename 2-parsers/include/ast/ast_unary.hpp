@@ -7,9 +7,9 @@
 class Unary
     : public Expression
 {
-protected:
+private:
     ExpressionPtr expr;
-
+protected:
     Unary(const ExpressionPtr _expr)
         : expr(_expr)
     {}
