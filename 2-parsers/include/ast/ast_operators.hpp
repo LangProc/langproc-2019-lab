@@ -7,15 +7,21 @@
 class Operator
     : public Expression
 {
-protected:
+private:
     ExpressionPtr left;
     ExpressionPtr right;
-
+protected:
     Operator(ExpressionPtr _left, ExpressionPtr _right)
         : left(_left)
         , right(_right)
     {}
 public:
+    virtual ~Operator()
+    {
+        delete left;
+        delete right;
+    }
+
     virtual const char *getOpcode() const =0;
 
     ExpressionPtr getLeft() const
@@ -52,8 +58,8 @@ public:
     ) const override 
     {
         // TODO-C : Run bin/eval_expr with something like 5+a, where a=10, to make sure you understand how this works
-        double vl=left->evaluate(bindings);
-        double vr=right->evaluate(bindings);
+        double vl=getLeft()->evaluate(bindings);
+        double vr=getRight()->evaluate(bindings);
         return vl+vr;
     }
 };
