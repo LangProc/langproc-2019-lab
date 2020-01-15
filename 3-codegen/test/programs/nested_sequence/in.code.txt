@@ -5,7 +5,7 @@ Seq [
     Assign : z [ 10 ]
   ]
   Seq [ 
-    Seq
+    Seq [
       Assign : x [ Add [ x y ] ]
       Assign : z [ Add [ x z ] ]
     ]
