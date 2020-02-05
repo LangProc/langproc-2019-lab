@@ -14,7 +14,7 @@ else
     # The code \x0D is the ASCII code of carriage-return,
     # so it the regex should delete any CRs at the end of
     # a line (or anywhere in a line)
-    DOS2UNIX="sed -e s/\r//g"
+    DOS2UNIX="cat"
     # Tested for combinations of:
     # - Ubuntu
     # - Cygwin
